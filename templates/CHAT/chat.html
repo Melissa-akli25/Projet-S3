@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+</head>
+<body>
+    <h1>Bienvenue dans le Chatbot</h1>
+
+    <!-- Le div qui contiendra le Chatbot -->
+    <div id="dfMessenger"></div>
+
+    <iframe width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/97d50cd4-3009-4046-8a9c-a729233db413"></iframe>
+    <script>
+        (function () {
+            var script = document.createElement('script');
+            script.src = 'https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1';
+            script.onload = function () {
+                // Remplacez '70fb2213-e363-408c-9336-11c9034a4e96' par l'ID de votre agent
+                dfMessenger.render('my-stylist-culs');
+            };
+            document.body.appendChild(script);
+        })();
+    </script>
+</body>
+</html>

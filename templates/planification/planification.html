@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planification d'Événements</title>
+  <!-- Inclure FullCalendar -->
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js"></script>
+</head>
+<body>
+  <div id="calendar"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialisation du calendrier
+      var calendar = new FullCalendar.Calendar(document.getElementById('calendar'), {
+        initialView: 'dayGridMonth',  // Affichage par mois
+        events: '/get_scheduled_events',  // Charger les événements depuis l'API
+
+        // Lorsque l'utilisateur clique sur une date
+        dateClick: function(info) {
+          let date = info.dateStr;  // Date sélectionnée
+          let eventTitle = prompt("Entrez le titre de l'événement (ex : Réunion):");
+          
+          if (eventTitle) {
+            // Appel API pour enregistrer l'événement
+            fetch('/schedule_event', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ date: date, title: eventTitle })
+            })
+            .then(response => response.json())
+            .then(data => {
+              if (data.message) {
+                // Ajouter l'événement au calendrier si la réponse est un succès
+                calendar.addEvent({
+                  title: eventTitle,
+                  start: date,
+                  allDay: true  // Marquer comme événement de toute la journée
+                });
+                alert(data.message);  // Message de confirmation
+              }
+            })
+            .catch(err => {
+              console.error("Erreur lors de la planification de l'événement:", err);
+            });
+          }
+        }
+      });
+
+      // Rendu du calendrier
+      calendar.render();
+    });
+  </script>
+</body>
+</html>

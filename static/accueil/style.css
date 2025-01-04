@@ -1,0 +1,95 @@
+/* Arrière-plan responsive */
+.background {
+    position: fixed; /* Fixé à la fenêtre */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('accueil.webp'); /* Remplacez avec le chemin de votre image */
+    background-size: cover; /* Assure que l'image couvre l'écran tout en préservant les proportions */
+    background-position: center; /* Centre l'image */
+    background-repeat: no-repeat; /* Évite la répétition de l'image */
+    z-index: -1; /* Place l'image derrière le contenu */
+}
+
+/* Conteneur pour le menu déroulant */
+.navbar-menu {
+    position: relative;
+    display: inline-block;
+}
+
+/* Bouton pour activer le menu */
+.navbar-menu .menu-toggle {
+    font-family: 'Embed code', 'Courier New', Courier, monospace;
+    color: #4e4d4d;
+    text-decoration: none;
+    font-size: 1.7rem;
+    font-weight: 600;
+    padding: 0.8rem 1rem;
+    border-radius: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 50px;
+}
+
+/* Style au survol/clic du bouton */
+.navbar-menu .menu-toggle:hover {
+    color: rgb(6, 6, 6);
+    background-color: #d3cfbe;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Masquer les liens par défaut */
+.navbar a {
+    display: none;
+}
+
+/* Affiche les liens quand le menu est survolé */
+.navbar-menu:hover a {
+    display: block;
+    font-size: 1.3rem;
+    font-family: 'Dancing Script','Courier New', Courier, monospace;
+    position: relative;
+    color: #4e4d4d;
+    background-color: transparent;
+    padding: 0.8rem 1rem;
+    text-align: left;
+    border-radius: 30px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    margin-left: 10px;
+    text-decoration: none;
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+/* Style au survol des liens du menu */
+.navbar-menu a:hover {
+    color: rgb(6, 6, 6);
+    
+    background-color: #d3cfbe;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Icône du chatbot */
+.chat {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 1000;
+}
+
+.chat-icon {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.chat-icon:hover {
+    transform: scale(1.1);
+}
