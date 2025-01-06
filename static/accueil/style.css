@@ -1,15 +1,15 @@
-/* Arrière-plan responsive */
+
 .background {
-    position: fixed; /* Fixé à la fenêtre */
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('accueil.webp'); /* Remplacez avec le chemin de votre image */
-    background-size: cover; /* Assure que l'image couvre l'écran tout en préservant les proportions */
-    background-position: center; /* Centre l'image */
-    background-repeat: no-repeat; /* Évite la répétition de l'image */
-    z-index: -1; /* Place l'image derrière le contenu */
+    background-image: url('accueil.webp'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    z-index: -1; 
 }
 
 /* Conteneur pour le menu déroulant */
@@ -42,12 +42,10 @@
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Masquer les liens par défaut */
 .navbar a {
     display: none;
 }
 
-/* Affiche les liens quand le menu est survolé */
 .navbar-menu:hover a {
     display: block;
     font-size: 1.3rem;
@@ -66,7 +64,6 @@
     transition: all 0.3s ease;
 }
 
-/* Style au survol des liens du menu */
 .navbar-menu a:hover {
     color: rgb(6, 6, 6);
     
@@ -75,7 +72,6 @@
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Icône du chatbot */
 .chat {
     position: fixed;
     bottom: 20px;
