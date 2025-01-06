@@ -15,12 +15,10 @@
     document.addEventListener('DOMContentLoaded', function() {
       // Initialisation du calendrier
       var calendar = new FullCalendar.Calendar(document.getElementById('calendar'), {
-        initialView: 'dayGridMonth',  // Affichage par mois
-        events: '/get_scheduled_events',  // Charger les événements depuis l'API
-
-        // Lorsque l'utilisateur clique sur une date
+        initialView: 'dayGridMonth', 
+        events: '/get_scheduled_events',  
         dateClick: function(info) {
-          let date = info.dateStr;  // Date sélectionnée
+          let date = info.dateStr; 
           let eventTitle = prompt("Entrez le titre de l'événement (ex : Réunion):");
           
           if (eventTitle) {
@@ -39,9 +37,9 @@
                 calendar.addEvent({
                   title: eventTitle,
                   start: date,
-                  allDay: true  // Marquer comme événement de toute la journée
+                  allDay: true  
                 });
-                alert(data.message);  // Message de confirmation
+                alert(data.message);  
               }
             })
             .catch(err => {
