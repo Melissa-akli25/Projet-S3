@@ -12,13 +12,13 @@
     z-index: -1; 
 }
 
-/* Conteneur pour le menu déroulant */
+
 .navbar-menu {
     position: relative;
     display: inline-block;
 }
 
-/* Bouton pour activer le menu */
+
 .navbar-menu .menu-toggle {
     font-family: 'Embed code', 'Courier New', Courier, monospace;
     color: #4e4d4d;
@@ -34,7 +34,7 @@
     margin-left: 50px;
 }
 
-/* Style au survol/clic du bouton */
+
 .navbar-menu .menu-toggle:hover {
     color: rgb(6, 6, 6);
     background-color: #d3cfbe;
